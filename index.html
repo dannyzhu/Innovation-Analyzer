@@ -1,14 +1,16 @@
 <!DOCTYPE html>
- <html lang="en">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>提取内容数据 by Kimi (Support ChatGPT API, Support ARC 浏览器, Support 视频网站) </title>
+    <title>提取内容数据 by Kimi (Support ChatGPT API, Support ARC 浏览器, Support 视频网站，Support 即时会话聊天、即时搜索) </title>
 
     <!-- Meta SEO -->
     <meta name="title" content="提取内容数据 by Kimi, Support ChatGPT API, Support ARC 浏览器">
-    <meta name="description" content="使用 Kimi AI 工具进行网页智能分析、总结和输出，支持自定义Prompt，支持多Prompt，内置多个Prompt；也支持ChatGPT API。支持快捷键、右键菜单；支持Youtube、Bilibili视频字幕内容。Using the Kimi AI tool for intelligent web analysis and output, supporting custom prompts, multiple prompts, and built-in multiple prompts; also supporting ChatGPT API. Support keyboard shortcuts, right-click menu; support subtitles for YouTube and Bilibili videos.">
+    <meta name="description"
+        content="使用 Kimi AI 工具进行网页智能分析、总结和输出，支持自定义Prompt，支持多Prompt，内置多个Prompt；也支持ChatGPT API。支持即时会话聊天，支持搜索；支持快捷键、右键菜单；支持Youtube、Bilibili视频字幕内容。Using the Kimi AI tool for intelligent web analysis and output, supporting custom prompts, multiple prompts, and built-in multiple prompts; also supporting ChatGPT API. Support keyboard shortcuts, right-click menu; support subtitles for YouTube and Bilibili videos.">
     <meta name="robots" content="index, follow">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="language" content="zh_CN">
@@ -24,25 +26,32 @@
     <link href="./output.css" rel="stylesheet">
     <!-- <script async defer src="https://buttons.github.io/buttons.js"></script> -->
 </head>
+
 <body>
     <header class="fixed w-full">
         <nav class="bg-white border-gray-200 py-2.5 dark:bg-gray-900">
             <div class="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto">
                 <a href="./" class="flex items-center">
                     <img src="./images/icon-128.png" class="h-6 mr-3 sm:h-9" alt="提取内容数据 by Kimi Logo" />
-                    <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">提取内容数据 by Kimi (Note by Kimi) </span>
+                    <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">提取内容数据 by Kimi
+                        (Note by Kimi) </span>
                 </a>
                 <div class="flex items-center lg:order-2">
 
-                    <a href="https://chromewebstore.google.com/detail/%E6%8F%90%E5%8F%96%E5%86%85%E5%AE%B9%E6%95%B0%E6%8D%AE-by-kimi/khfagpkengoghobnakblddbmdhjkolkb?hl=zh-CN&utm_source=ext_sidebar" class="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800">添加到 Chrome</a>
+                    <a href="https://chromewebstore.google.com/detail/%E6%8F%90%E5%8F%96%E5%86%85%E5%AE%B9%E6%95%B0%E6%8D%AE-by-kimi/khfagpkengoghobnakblddbmdhjkolkb?hl=zh-CN&utm_source=ext_sidebar"
+                        class="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800">添加到
+                        Chrome</a>
                 </div>
                 <div class="items-center justify-between hidden w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
                     <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
                         <li>
-                            <a href="./" class="block py-2 pl-3 pr-4 text-white bg-purple-700 rounded lg:bg-transparent lg:text-purple-700 lg:p-0 dark:text-white" aria-current="page">Home</a>
+                            <a href="./"
+                                class="block py-2 pl-3 pr-4 text-white bg-purple-700 rounded lg:bg-transparent lg:text-purple-700 lg:p-0 dark:text-white"
+                                aria-current="page">Home</a>
                         </li>
                         <li>
-                            <a href="privacy-policy.html" class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Privacy-policy</a>
+                            <a href="privacy-policy.html"
+                                class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Privacy-policy</a>
                         </li>
                     </ul>
                 </div>
@@ -54,47 +63,134 @@
     <section class="bg-white dark:bg-gray-900">
         <div class="grid max-w-screen-xl px-4 pt-20 pb-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 lg:pt-28">
             <div class="mr-auto place-self-center lg:col-span-7">
-                <h1 class="max-w-2xl mb-4 text-4xl font-extrabold leading-none tracking-tight md:text-5xl xl:text-6xl dark:text-white">提取内容数据 by Kimi</h1>
-                <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl">使用 Kimi AI 工具进行网页智能分析和输出，支持自定义Prompt，支持多Prompt，内置多个Prompt；也支持ChatGPT API。支持PDF，无需下载上传，可在浏览器中直接访问。</p>
+                <h1
+                    class="max-w-2xl mb-4 text-4xl font-extrabold leading-none tracking-tight md:text-5xl xl:text-6xl dark:text-white">
+                    提取内容数据 by Kimi</h1>
+                <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl">使用 Kimi AI 工具进行网页智能分析和输出，支持自定义多个Prompt，内置多个Prompt；也支持ChatGPT API。支持PDF，无需下载上传，可在浏览器中直接访问。支持即时会话聊天，支持搜索；支持快捷键、右键菜单；支持Youtube、Bilibili视频。</p>
                 <div class="space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
-                    <a href="https://chromewebstore.google.com/detail/%E6%8F%90%E5%8F%96%E5%86%85%E5%AE%B9%E6%95%B0%E6%8D%AE-by-kimi/khfagpkengoghobnakblddbmdhjkolkb?hl=zh-CN&utm_source=ext_sidebar" class="inline-flex items-center justify-center w-full px-5 py-3 text-sm font-medium text-center text-gray-900 border border-gray-200 rounded-lg sm:w-auto hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
-                        <svg class="w-4 h-4 mr-2" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
+                    <a href="https://chromewebstore.google.com/detail/%E6%8F%90%E5%8F%96%E5%86%85%E5%AE%B9%E6%95%B0%E6%8D%AE-by-kimi/khfagpkengoghobnakblddbmdhjkolkb?hl=zh-CN&utm_source=ext_sidebar"
+                        class="inline-flex items-center justify-center w-full px-5 py-3 text-sm font-medium text-center text-gray-900 border border-gray-200 rounded-lg sm:w-auto hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
+                        <svg class="w-4 h-4 mr-2" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 48 48">
                             <defs>
-                              <linearGradient id="a" x1="3.2173" y1="15" x2="44.7812" y2="15" gradientUnits="userSpaceOnUse">
-                                <stop offset="0" stop-color="#d93025"/>
-                                <stop offset="1" stop-color="#ea4335"/>
-                              </linearGradient>
-                              <linearGradient id="b" x1="20.7219" y1="47.6791" x2="41.5039" y2="11.6837" gradientUnits="userSpaceOnUse">
-                                <stop offset="0" stop-color="#fcc934"/>
-                                <stop offset="1" stop-color="#fbbc04"/>
-                              </linearGradient>
-                              <linearGradient id="c" x1="26.5981" y1="46.5015" x2="5.8161" y2="10.506" gradientUnits="userSpaceOnUse">
-                                <stop offset="0" stop-color="#1e8e3e"/>
-                                <stop offset="1" stop-color="#34a853"/>
-                              </linearGradient>
-                              
-                              <path id="p" d="M13.6086 30.0031 3.218 12.006A23.994 23.994 0 0 0 24.0025 48l10.3906-17.9971-.0067-.0068a11.9852 11.9852 0 0 1-20.7778.007Z"/>
+                                <linearGradient id="a" x1="3.2173" y1="15" x2="44.7812" y2="15"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop offset="0" stop-color="#d93025" />
+                                    <stop offset="1" stop-color="#ea4335" />
+                                </linearGradient>
+                                <linearGradient id="b" x1="20.7219" y1="47.6791" x2="41.5039" y2="11.6837"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop offset="0" stop-color="#fcc934" />
+                                    <stop offset="1" stop-color="#fbbc04" />
+                                </linearGradient>
+                                <linearGradient id="c" x1="26.5981" y1="46.5015" x2="5.8161" y2="10.506"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop offset="0" stop-color="#1e8e3e" />
+                                    <stop offset="1" stop-color="#34a853" />
+                                </linearGradient>
+
+                                <path id="p"
+                                    d="M13.6086 30.0031 3.218 12.006A23.994 23.994 0 0 0 24.0025 48l10.3906-17.9971-.0067-.0068a11.9852 11.9852 0 0 1-20.7778.007Z" />
                             </defs>
-                            
-                            <use xlink:href="#p" fill="url(#a)" transform="rotate(120 24 24)"/>
-                            <use xlink:href="#p" fill="url(#b)" transform="rotate(-120 24 24)"/>
-                            <use xlink:href="#p" fill="url(#c)"/>
-                            
-                            <circle cx="24" cy="24" r="12" style="fill:#fff"/>
-                            <circle cx="24" cy="24" r="9.5" style="fill:#1a73e8"/>
-                          </svg> 添加到 Chrome 浏览器
-                    </a> 
-                    <a href="https://chromewebstore.google.com/detail/%E6%8F%90%E5%8F%96%E5%86%85%E5%AE%B9%E6%95%B0%E6%8D%AE-by-kimi/khfagpkengoghobnakblddbmdhjkolkb?hl=zh-CN&utm_source=ext_sidebar" class="inline-flex items-center justify-center w-full px-5 py-3 mb-2 mr-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg sm:w-auto focus:outline-none hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
-<svg class="w-4 h-4 mr-2" id="Layer_1" viewBox="0 0 256 219" xmlns="http://www.w3.org/2000/svg" width="256" height="219" preserveAspectRatio="xMidYMid"><path fill="#FFF" d="M123.632.012c13.836.398 26.332 8.52 32.32 21.089l23.761 49.984.382-.966a58.846 58.846 0 0 0 2.315-7.64l.332-1.548c4.004-20.02 23.463-32.977 43.52-29.016a36.982 36.982 0 0 1 29.018 43.526c-5.337 26.652-19.095 51.387-38.829 70.983l-.625.607 8.33 17.514c9.668 20.33-.349 44.903-21.4 51.799l-.95.297-.725.219a36.691 36.691 0 0 1-9.897 1.373 37.012 37.012 0 0 1-33.42-21.102l-6.43-13.518-1.622.402c-8.692 2.054-17.508 3.192-26.328 3.367l-2.405.024c-8.488 0-17.116-.987-25.736-2.9l-1.7-.396-6.177 12.987a36.972 36.972 0 0 1-20.713 18.852l-1.1.382a36.963 36.963 0 0 1-28.96-2.484c-17.56-9.334-24.256-31.186-15.688-49.235l7.67-16.129-.67-.65C17.39 137.46 9.054 125.67 3.524 112.996l-.737-1.733-.106-.281C-4.93 92.058 4.21 70.517 23.122 62.86c14.834-6.005 31.278-1.693 41.39 9.578l.19.218 24.446-51.422A36.858 36.858 0 0 1 121.535.01L122.57 0l1.062.012Z"/><path fill="#1A007F" d="m87.118 170.045 21.896-46.068c-16.724-3.552-33.551-13.897-43.068-26.482L43.05 145.63c12.723 10.793 27.999 19.276 44.068 24.414"/><path fill="#4E000A" d="M178.495 96.115c-11 13.483-26.275 23.483-42.62 27.379l21.827 45.93c15.931-5.38 30.827-14.069 43.69-25.206l-22.897-48.103Z"/><path fill="#1A007F" d="M43.05 145.631 31.602 169.7c-5.828 12.241-1.449 27.31 10.551 33.689 12.724 6.758 28.379 1.483 34.517-11.38l10.448-21.964A130.635 130.635 0 0 1 43.05 145.63"/><path fill="#FF9396" d="M223.942 43.565a25.137 25.137 0 0 0-29.585 19.723c-2.414 12.07-8.069 23.31-15.862 32.862l22.862 48.137c21.103-18.31 36.688-43.24 42.275-71.137 2.724-13.655-6.104-26.896-19.69-29.585"/><path fill="#002DC8" d="M135.875 123.494c-4.896 1.172-9.896 1.793-14.896 1.793-3.896 0-7.93-.448-11.965-1.31-16.724-3.552-33.551-13.897-43.068-26.482-2.38-3.138-4.31-6.414-5.655-9.759-5.207-12.862-19.862-19.068-32.724-13.896C14.705 79.047 8.5 93.702 13.671 106.563c5.896 14.62 16.31 28.034 29.379 39.068a130.48 130.48 0 0 0 44.033 24.414c11.069 3.551 22.551 5.517 33.862 5.517 12.551 0 24.93-2.173 36.723-6.138l-21.793-45.93Z"/><path fill="#FF536A" d="m213.425 169.596-12.068-25.378-22.862-48.103-.034.035s0-.035.034-.035l-33.24-69.93a25.144 25.144 0 0 0-22.69-14.344c-9.69 0-18.517 5.586-22.689 14.345L65.98 97.495c9.517 12.585 26.344 22.93 43.068 26.482l10.965-23.034c1.035-2.173 4.138-2.173 5.173 0l10.724 22.551h.069-.07l21.828 45.93 10.724 22.551a25.103 25.103 0 0 0 22.723 14.345c2.242 0 4.483-.31 6.69-.931 15.138-4.173 22.31-21.586 15.551-35.793"/></svg>添加到 ARC 浏览器
+
+                            <use xlink:href="#p" fill="url(#a)" transform="rotate(120 24 24)" />
+                            <use xlink:href="#p" fill="url(#b)" transform="rotate(-120 24 24)" />
+                            <use xlink:href="#p" fill="url(#c)" />
+
+                            <circle cx="24" cy="24" r="12" style="fill:#fff" />
+                            <circle cx="24" cy="24" r="9.5" style="fill:#1a73e8" />
+                        </svg> 添加到 Chrome 浏览器
                     </a>
-                    <a href="https://chromewebstore.google.com/detail/%E6%8F%90%E5%8F%96%E5%86%85%E5%AE%B9%E6%95%B0%E6%8D%AE-by-kimi/khfagpkengoghobnakblddbmdhjkolkb?hl=zh-CN&utm_source=ext_sidebar" class="inline-flex items-center justify-center w-full px-5 py-3 mb-2 mr-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg sm:w-auto focus:outline-none hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
-<svg class="w-4 h-4 mr-2" id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><defs><radialGradient id="b" cx="161.8" cy="68.9" r="95.4" gradientTransform="matrix(1 0 0 -.95 0 248.8)" gradientUnits="userSpaceOnUse"><stop offset=".7" stop-opacity="0"/><stop offset=".9" stop-opacity=".5"/><stop offset="1"/></radialGradient><radialGradient id="d" cx="-340.3" cy="63" r="143.2" gradientTransform="matrix(.15 -.99 -.8 -.12 176.6 -125.4)" gradientUnits="userSpaceOnUse"><stop offset=".8" stop-opacity="0"/><stop offset=".9" stop-opacity=".5"/><stop offset="1"/></radialGradient><radialGradient id="e" cx="113.4" cy="570.2" r="202.4" gradientTransform="matrix(-.04 1 2.13 .08 -1179.5 -106.7)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#35c1f1"/><stop offset=".1" stop-color="#34c1ed"/><stop offset=".2" stop-color="#2fc2df"/><stop offset=".3" stop-color="#2bc3d2"/><stop offset=".7" stop-color="#36c752"/></radialGradient><radialGradient id="f" cx="376.5" cy="568" r="97.3" gradientTransform="matrix(.28 .96 .78 -.23 -303.8 -148.5)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#66eb6e"/><stop offset="1" stop-color="#66eb6e" stop-opacity="0"/></radialGradient><linearGradient id="a" x1="63.3" y1="84" x2="241.7" y2="84" gradientTransform="matrix(1 0 0 -1 0 266)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#0c59a4"/><stop offset="1" stop-color="#114a8b"/></linearGradient><linearGradient id="c" x1="157.3" y1="161.4" x2="46" y2="40.1" gradientTransform="matrix(1 0 0 -1 0 266)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#1b9de2"/><stop offset=".2" stop-color="#1595df"/><stop offset=".7" stop-color="#0680d7"/><stop offset="1" stop-color="#0078d4"/></linearGradient></defs><path d="M235.7 195.5a93.7 93.7 0 0 1-10.6 4.7 101.9 101.9 0 0 1-35.9 6.4c-47.3 0-88.5-32.5-88.5-74.3a31.5 31.5 0 0 1 16.4-27.3c-42.8 1.8-53.8 46.4-53.8 72.5 0 74 68.1 81.4 82.8 81.4 7.9 0 19.8-2.3 27-4.6l1.3-.4a128.3 128.3 0 0 0 66.6-52.8 4 4 0 0 0-5.3-5.6Z" transform="translate(-4.6 -5)" style="fill:url(#a)"/><path d="M235.7 195.5a93.7 93.7 0 0 1-10.6 4.7 101.9 101.9 0 0 1-35.9 6.4c-47.3 0-88.5-32.5-88.5-74.3a31.5 31.5 0 0 1 16.4-27.3c-42.8 1.8-53.8 46.4-53.8 72.5 0 74 68.1 81.4 82.8 81.4 7.9 0 19.8-2.3 27-4.6l1.3-.4a128.3 128.3 0 0 0 66.6-52.8 4 4 0 0 0-5.3-5.6Z" transform="translate(-4.6 -5)" style="isolation:isolate;opacity:.35;fill:url(#b)"/><path d="M110.3 246.3A79.2 79.2 0 0 1 87.6 225a80.7 80.7 0 0 1 29.5-120c3.2-1.5 8.5-4.1 15.6-4a32.4 32.4 0 0 1 25.7 13 31.9 31.9 0 0 1 6.3 18.7c0-.2 24.5-79.6-80-79.6-43.9 0-80 41.6-80 78.2a130.2 130.2 0 0 0 12.1 56 128 128 0 0 0 156.4 67 75.5 75.5 0 0 1-62.8-8Z" transform="translate(-4.6 -5)" style="fill:url(#c)"/><path d="M110.3 246.3A79.2 79.2 0 0 1 87.6 225a80.7 80.7 0 0 1 29.5-120c3.2-1.5 8.5-4.1 15.6-4a32.4 32.4 0 0 1 25.7 13 31.9 31.9 0 0 1 6.3 18.7c0-.2 24.5-79.6-80-79.6-43.9 0-80 41.6-80 78.2a130.2 130.2 0 0 0 12.1 56 128 128 0 0 0 156.4 67 75.5 75.5 0 0 1-62.8-8Z" transform="translate(-4.6 -5)" style="opacity:.41;fill:url(#d);isolation:isolate"/><path d="M157 153.8c-.9 1-3.4 2.5-3.4 5.6 0 2.6 1.7 5.2 4.8 7.3 14.3 10 41.4 8.6 41.5 8.6a59.6 59.6 0 0 0 30.3-8.3 61.4 61.4 0 0 0 30.4-52.9c.3-22.4-8-37.3-11.3-43.9C228 28.8 182.3 5 132.6 5a128 128 0 0 0-128 126.2c.5-36.5 36.8-66 80-66 3.5 0 23.5.3 42 10a72.6 72.6 0 0 1 30.9 29.3c6.1 10.6 7.2 24.1 7.2 29.5s-2.7 13.3-7.8 19.9Z" transform="translate(-4.6 -5)" style="fill:url(#e)"/><path d="M157 153.8c-.9 1-3.4 2.5-3.4 5.6 0 2.6 1.7 5.2 4.8 7.3 14.3 10 41.4 8.6 41.5 8.6a59.6 59.6 0 0 0 30.3-8.3 61.4 61.4 0 0 0 30.4-52.9c.3-22.4-8-37.3-11.3-43.9C228 28.8 182.3 5 132.6 5a128 128 0 0 0-128 126.2c.5-36.5 36.8-66 80-66 3.5 0 23.5.3 42 10a72.6 72.6 0 0 1 30.9 29.3c6.1 10.6 7.2 24.1 7.2 29.5s-2.7 13.3-7.8 19.9Z" transform="translate(-4.6 -5)" style="fill:url(#f)"/></svg> 添加到 Edge 浏览器
+                    <a href="https://chromewebstore.google.com/detail/%E6%8F%90%E5%8F%96%E5%86%85%E5%AE%B9%E6%95%B0%E6%8D%AE-by-kimi/khfagpkengoghobnakblddbmdhjkolkb?hl=zh-CN&utm_source=ext_sidebar"
+                        class="inline-flex items-center justify-center w-full px-5 py-3 mb-2 mr-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg sm:w-auto focus:outline-none hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+                        <svg class="w-4 h-4 mr-2" id="Layer_1" viewBox="0 0 256 219" xmlns="http://www.w3.org/2000/svg"
+                            width="256" height="219" preserveAspectRatio="xMidYMid">
+                            <path fill="#FFF"
+                                d="M123.632.012c13.836.398 26.332 8.52 32.32 21.089l23.761 49.984.382-.966a58.846 58.846 0 0 0 2.315-7.64l.332-1.548c4.004-20.02 23.463-32.977 43.52-29.016a36.982 36.982 0 0 1 29.018 43.526c-5.337 26.652-19.095 51.387-38.829 70.983l-.625.607 8.33 17.514c9.668 20.33-.349 44.903-21.4 51.799l-.95.297-.725.219a36.691 36.691 0 0 1-9.897 1.373 37.012 37.012 0 0 1-33.42-21.102l-6.43-13.518-1.622.402c-8.692 2.054-17.508 3.192-26.328 3.367l-2.405.024c-8.488 0-17.116-.987-25.736-2.9l-1.7-.396-6.177 12.987a36.972 36.972 0 0 1-20.713 18.852l-1.1.382a36.963 36.963 0 0 1-28.96-2.484c-17.56-9.334-24.256-31.186-15.688-49.235l7.67-16.129-.67-.65C17.39 137.46 9.054 125.67 3.524 112.996l-.737-1.733-.106-.281C-4.93 92.058 4.21 70.517 23.122 62.86c14.834-6.005 31.278-1.693 41.39 9.578l.19.218 24.446-51.422A36.858 36.858 0 0 1 121.535.01L122.57 0l1.062.012Z" />
+                            <path fill="#1A007F"
+                                d="m87.118 170.045 21.896-46.068c-16.724-3.552-33.551-13.897-43.068-26.482L43.05 145.63c12.723 10.793 27.999 19.276 44.068 24.414" />
+                            <path fill="#4E000A"
+                                d="M178.495 96.115c-11 13.483-26.275 23.483-42.62 27.379l21.827 45.93c15.931-5.38 30.827-14.069 43.69-25.206l-22.897-48.103Z" />
+                            <path fill="#1A007F"
+                                d="M43.05 145.631 31.602 169.7c-5.828 12.241-1.449 27.31 10.551 33.689 12.724 6.758 28.379 1.483 34.517-11.38l10.448-21.964A130.635 130.635 0 0 1 43.05 145.63" />
+                            <path fill="#FF9396"
+                                d="M223.942 43.565a25.137 25.137 0 0 0-29.585 19.723c-2.414 12.07-8.069 23.31-15.862 32.862l22.862 48.137c21.103-18.31 36.688-43.24 42.275-71.137 2.724-13.655-6.104-26.896-19.69-29.585" />
+                            <path fill="#002DC8"
+                                d="M135.875 123.494c-4.896 1.172-9.896 1.793-14.896 1.793-3.896 0-7.93-.448-11.965-1.31-16.724-3.552-33.551-13.897-43.068-26.482-2.38-3.138-4.31-6.414-5.655-9.759-5.207-12.862-19.862-19.068-32.724-13.896C14.705 79.047 8.5 93.702 13.671 106.563c5.896 14.62 16.31 28.034 29.379 39.068a130.48 130.48 0 0 0 44.033 24.414c11.069 3.551 22.551 5.517 33.862 5.517 12.551 0 24.93-2.173 36.723-6.138l-21.793-45.93Z" />
+                            <path fill="#FF536A"
+                                d="m213.425 169.596-12.068-25.378-22.862-48.103-.034.035s0-.035.034-.035l-33.24-69.93a25.144 25.144 0 0 0-22.69-14.344c-9.69 0-18.517 5.586-22.689 14.345L65.98 97.495c9.517 12.585 26.344 22.93 43.068 26.482l10.965-23.034c1.035-2.173 4.138-2.173 5.173 0l10.724 22.551h.069-.07l21.828 45.93 10.724 22.551a25.103 25.103 0 0 0 22.723 14.345c2.242 0 4.483-.31 6.69-.931 15.138-4.173 22.31-21.586 15.551-35.793" />
+                        </svg>添加到 ARC 浏览器
+                    </a>
+                    <a href="https://chromewebstore.google.com/detail/%E6%8F%90%E5%8F%96%E5%86%85%E5%AE%B9%E6%95%B0%E6%8D%AE-by-kimi/khfagpkengoghobnakblddbmdhjkolkb?hl=zh-CN&utm_source=ext_sidebar"
+                        class="inline-flex items-center justify-center w-full px-5 py-3 mb-2 mr-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg sm:w-auto focus:outline-none hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+                        <svg class="w-4 h-4 mr-2" id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+                            <defs>
+                                <radialGradient id="b" cx="161.8" cy="68.9" r="95.4"
+                                    gradientTransform="matrix(1 0 0 -.95 0 248.8)" gradientUnits="userSpaceOnUse">
+                                    <stop offset=".7" stop-opacity="0" />
+                                    <stop offset=".9" stop-opacity=".5" />
+                                    <stop offset="1" />
+                                </radialGradient>
+                                <radialGradient id="d" cx="-340.3" cy="63" r="143.2"
+                                    gradientTransform="matrix(.15 -.99 -.8 -.12 176.6 -125.4)"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop offset=".8" stop-opacity="0" />
+                                    <stop offset=".9" stop-opacity=".5" />
+                                    <stop offset="1" />
+                                </radialGradient>
+                                <radialGradient id="e" cx="113.4" cy="570.2" r="202.4"
+                                    gradientTransform="matrix(-.04 1 2.13 .08 -1179.5 -106.7)"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop offset="0" stop-color="#35c1f1" />
+                                    <stop offset=".1" stop-color="#34c1ed" />
+                                    <stop offset=".2" stop-color="#2fc2df" />
+                                    <stop offset=".3" stop-color="#2bc3d2" />
+                                    <stop offset=".7" stop-color="#36c752" />
+                                </radialGradient>
+                                <radialGradient id="f" cx="376.5" cy="568" r="97.3"
+                                    gradientTransform="matrix(.28 .96 .78 -.23 -303.8 -148.5)"
+                                    gradientUnits="userSpaceOnUse">
+                                    <stop offset="0" stop-color="#66eb6e" />
+                                    <stop offset="1" stop-color="#66eb6e" stop-opacity="0" />
+                                </radialGradient>
+                                <linearGradient id="a" x1="63.3" y1="84" x2="241.7" y2="84"
+                                    gradientTransform="matrix(1 0 0 -1 0 266)" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0" stop-color="#0c59a4" />
+                                    <stop offset="1" stop-color="#114a8b" />
+                                </linearGradient>
+                                <linearGradient id="c" x1="157.3" y1="161.4" x2="46" y2="40.1"
+                                    gradientTransform="matrix(1 0 0 -1 0 266)" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0" stop-color="#1b9de2" />
+                                    <stop offset=".2" stop-color="#1595df" />
+                                    <stop offset=".7" stop-color="#0680d7" />
+                                    <stop offset="1" stop-color="#0078d4" />
+                                </linearGradient>
+                            </defs>
+                            <path
+                                d="M235.7 195.5a93.7 93.7 0 0 1-10.6 4.7 101.9 101.9 0 0 1-35.9 6.4c-47.3 0-88.5-32.5-88.5-74.3a31.5 31.5 0 0 1 16.4-27.3c-42.8 1.8-53.8 46.4-53.8 72.5 0 74 68.1 81.4 82.8 81.4 7.9 0 19.8-2.3 27-4.6l1.3-.4a128.3 128.3 0 0 0 66.6-52.8 4 4 0 0 0-5.3-5.6Z"
+                                transform="translate(-4.6 -5)" style="fill:url(#a)" />
+                            <path
+                                d="M235.7 195.5a93.7 93.7 0 0 1-10.6 4.7 101.9 101.9 0 0 1-35.9 6.4c-47.3 0-88.5-32.5-88.5-74.3a31.5 31.5 0 0 1 16.4-27.3c-42.8 1.8-53.8 46.4-53.8 72.5 0 74 68.1 81.4 82.8 81.4 7.9 0 19.8-2.3 27-4.6l1.3-.4a128.3 128.3 0 0 0 66.6-52.8 4 4 0 0 0-5.3-5.6Z"
+                                transform="translate(-4.6 -5)" style="isolation:isolate;opacity:.35;fill:url(#b)" />
+                            <path
+                                d="M110.3 246.3A79.2 79.2 0 0 1 87.6 225a80.7 80.7 0 0 1 29.5-120c3.2-1.5 8.5-4.1 15.6-4a32.4 32.4 0 0 1 25.7 13 31.9 31.9 0 0 1 6.3 18.7c0-.2 24.5-79.6-80-79.6-43.9 0-80 41.6-80 78.2a130.2 130.2 0 0 0 12.1 56 128 128 0 0 0 156.4 67 75.5 75.5 0 0 1-62.8-8Z"
+                                transform="translate(-4.6 -5)" style="fill:url(#c)" />
+                            <path
+                                d="M110.3 246.3A79.2 79.2 0 0 1 87.6 225a80.7 80.7 0 0 1 29.5-120c3.2-1.5 8.5-4.1 15.6-4a32.4 32.4 0 0 1 25.7 13 31.9 31.9 0 0 1 6.3 18.7c0-.2 24.5-79.6-80-79.6-43.9 0-80 41.6-80 78.2a130.2 130.2 0 0 0 12.1 56 128 128 0 0 0 156.4 67 75.5 75.5 0 0 1-62.8-8Z"
+                                transform="translate(-4.6 -5)" style="opacity:.41;fill:url(#d);isolation:isolate" />
+                            <path
+                                d="M157 153.8c-.9 1-3.4 2.5-3.4 5.6 0 2.6 1.7 5.2 4.8 7.3 14.3 10 41.4 8.6 41.5 8.6a59.6 59.6 0 0 0 30.3-8.3 61.4 61.4 0 0 0 30.4-52.9c.3-22.4-8-37.3-11.3-43.9C228 28.8 182.3 5 132.6 5a128 128 0 0 0-128 126.2c.5-36.5 36.8-66 80-66 3.5 0 23.5.3 42 10a72.6 72.6 0 0 1 30.9 29.3c6.1 10.6 7.2 24.1 7.2 29.5s-2.7 13.3-7.8 19.9Z"
+                                transform="translate(-4.6 -5)" style="fill:url(#e)" />
+                            <path
+                                d="M157 153.8c-.9 1-3.4 2.5-3.4 5.6 0 2.6 1.7 5.2 4.8 7.3 14.3 10 41.4 8.6 41.5 8.6a59.6 59.6 0 0 0 30.3-8.3 61.4 61.4 0 0 0 30.4-52.9c.3-22.4-8-37.3-11.3-43.9C228 28.8 182.3 5 132.6 5a128 128 0 0 0-128 126.2c.5-36.5 36.8-66 80-66 3.5 0 23.5.3 42 10a72.6 72.6 0 0 1 30.9 29.3c6.1 10.6 7.2 24.1 7.2 29.5s-2.7 13.3-7.8 19.9Z"
+                                transform="translate(-4.6 -5)" style="fill:url(#f)" />
+                        </svg> 添加到 Edge 浏览器
                     </a>
                 </div>
             </div>
             <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/GftXs45Kk7M?si=N1GD84AQyg8keN5t" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>                
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/JWZIxn2tz8Q?si=b82Lq9u7TDCSkYl-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
         </div>
     </section>
     <!-- End block -->
@@ -105,59 +201,125 @@
             <div class="items-center gap-8 lg:grid lg:grid-cols-2 xl:gap-16">
                 <div class="text-gray-500 sm:text-lg dark:text-gray-400">
                     <h2 class="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">插件功能特点</h2>
-                    <p class="mb-8 font-light lg:text-xl">使用 Kimi AI 工具进行网页智能分析和输出，支持自定义Prompt，支持多Prompt，内置多个Prompt；也支持ChatGPT API。</p>
+                    <p class="mb-8 font-light lg:text-xl">使用 Kimi AI
+                        工具进行网页智能分析和输出，支持自定义Prompt，支持多Prompt，内置多个Prompt；也支持ChatGPT API。</p>
                     <!-- List -->
                     <ul role="list" class="pt-8 space-y-5 border-t border-gray-200 my-7 dark:border-gray-700">
                         <li class="flex space-x-3">
                             <!-- Icon -->
-                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-white">1. 免费： 基于Kimi AI平台，用户只需登录Kimi即可免费服务。</span>
+                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-white">1. 免费：
+                                基于Kimi AI平台，用户只需登录Kimi即可免费服务。</span>
                         </li>
                         <li class="flex space-x-3">
                             <!-- Icon -->
-                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-white">2. 自定义Prompt：支持自定义Prompt，可定义多个Prompt。</span>
+                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-white">2.
+                                自定义Prompt：支持自定义Prompt，可定义多个Prompt。</span>
                         </li>
                         <li class="flex space-x-3">
                             <!-- Icon -->
-                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-white">3. 支持 PDF：无需下载上传，浏览器中可直接访问 PDF。</span>
+                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-white">3. 支持
+                                PDF：无需下载上传，浏览器中可直接访问 PDF。</span>
                         </li>
                         <li class="flex space-x-3">
                             <!-- Icon -->
-                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-white">4. 跨浏览器兼容性：除了Chrome和Edge，同样支持Arc浏览器。</span>
+                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-white">4.
+                                跨浏览器兼容性：支持Chrome和Edge，同样也支持Arc浏览器。</span>
                         </li>
                         <li class="flex space-x-3">
                             <!-- Icon -->
-                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-white">5. KimiPlus 支持：可直接使用收藏的KimiPlus插件，且支持PDF。</span></span>
+                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-white">5.
+                                对话和搜索：当前页即时对话聊天，支持搜索功能，支持PDF。</span>
                         </li>
                         <li class="flex space-x-3">
                             <!-- Icon -->
-                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-white">6. Prompt库：提取数据、总结；提炼为PPT、微博、小红书风格、时间线。</span>
+                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-white">6.
+                                Prompt库：提取数据、总结；提炼为PPT、微博、小红书风格、时间线。</span>
                         </li>
                         <li class="flex space-x-3">
                             <!-- Icon -->
-                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-white">7. 快捷键操作：Alt+N 或 Shift+Alt+N ；支持右键菜单选择Prompt。</span>
+                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-white">7.
+                                快捷键操作：Alt+N 或 Shift+Alt+N ；支持右键菜单选择Prompt。</span>
                         </li>
                         <li class="flex space-x-3">
                             <!-- Icon -->
-                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-white">8. 会话管理：自动保存至Kimi AI平台，可随时回顾和继续之前的对话。</span>
+                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-white">8.
+                                会话管理：自动保存至Kimi AI平台，可随时回顾和继续之前的对话。</span>
                         </li>
                         <li class="flex space-x-3">
                             <!-- Icon -->
-                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-white">9. ChatGPT API集成：支持ChatGPT API，以及兼容的其他大型模型。
+                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-white">9. 视频网站：提取字幕内容，字幕全文翻译。</span>
+                        </li>
+                        <li class="flex space-x-3">
+                            <!-- Icon -->
+                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-white">10. ChatGPT
+                                API集成：支持ChatGPT API，以及兼容的其他大型模型。
                             </span>
                         </li>
                     </ul>
                     <p class="mb-8 font-light lg:text-xl">同时也支持 Coze 机器人，DeepSeek等。</p>
                 </div>
-                <img class="w-full mb-4 rounded-lg lg:mb-0 lg:flex" src="./images/note-feature-1.png" alt="dashboard feature image">
+                <img class="w-full mb-4 rounded-lg lg:mb-0 lg:flex" src="./images/note-feature-1.png"
+                    alt="dashboard feature image">
             </div>
         </div>
     </section>
@@ -165,55 +327,100 @@
         <div class="max-w-screen-xl px-4 py-8 mx-auto space-y-12 lg:space-y-20 lg:py-24 lg:px-6">
             <!-- Row -->
             <div class="items-center gap-8 lg:grid lg:grid-cols-2 xl:gap-16">
-                <img class="w-full mb-4 rounded-lg lg:mb-0 lg:flex" src="./images/note-feature-2.png" alt="feature image 2">
+                <img class="w-full mb-4 rounded-lg lg:mb-0 lg:flex" src="./images/note-feature-2.png"
+                    alt="feature image 2">
                 <div class="text-gray-500 sm:text-lg dark:text-gray-400">
-                    <h2 class="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">自定义 Prompt 功能，可定义多个 Prompt</h2>
+                    <h2 class="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">自定义 Prompt
+                        功能，可定义多个 Prompt</h2>
                     <p class="mb-8 font-light lg:text-xl">可定义多个Prompt，每个Prompt可以配置System Prompt和User Prompt。</p>
                     <!-- List -->
                     <ul role="list" class="pt-8 space-y-5 border-t border-gray-200 my-7 dark:border-gray-700">
                         <li class="flex space-x-3">
                             <!-- Icon -->
-                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-white">单独配置，互不影响。</span>
+                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span
+                                class="text-base font-medium leading-tight text-gray-900 dark:text-white">单独配置，互不影响。</span>
                         </li>
                         <li class="flex space-x-3">
                             <!-- Icon -->
-                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-white">随时修改，即刻生效。</span>
+                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span
+                                class="text-base font-medium leading-tight text-gray-900 dark:text-white">随时修改，即刻生效。</span>
                         </li>
                         <li class="flex space-x-3">
                             <!-- Icon -->
-                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-white">可选择缺省Prompt，打开即用。</span>
+                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span
+                                class="text-base font-medium leading-tight text-gray-900 dark:text-white">可选择缺省Prompt，打开即用。</span>
                         </li>
                         <li class="flex space-x-3">
                             <!-- Icon -->
-                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-white">KimiPlus 直接使用，方便快捷。</span>
+                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-white">KimiPlus
+                                直接使用，方便快捷。</span>
                         </li>
                         <li class="flex space-x-3">
                             <!-- Icon -->
-                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-white">安全：配置内容存储在您自己的电脑。</span>
+                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span
+                                class="text-base font-medium leading-tight text-gray-900 dark:text-white">安全：配置内容存储在您自己的电脑。</span>
                         </li>
                         <li class="flex space-x-3">
                             <!-- Icon -->
-                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-white">支持 DeepSeek。</span>
+                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-white">支持
+                                DeepSeek。</span>
                         </li>
                         <li class="flex space-x-3">
                             <!-- Icon -->
-                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-white">Kimi 和 DeepSeek 只需要你登录他们的网站即可使用，不需额外配置。</span>
+                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-white">Kimi 和
+                                DeepSeek 只需要你登录他们的网站即可使用，不需额外配置。</span>
                         </li>
                     </ul>
-                    <p class="font-light lg:text-xl">支持 Coze API 接入 Coze Agent，配置需要写 JSON 配置到 System Prompt 输入框即可（具体配置格式待补充）。</p>
+                    <p class="font-light lg:text-xl">支持 Coze API 接入 Coze Agent，配置需要写 JSON 配置到 System Prompt
+                        输入框即可（具体配置格式待补充）。</p>
                 </div>
             </div>
         </div>
     </section>
     <section class="bg-gray-50 dark:bg-gray-800">
-        <div class="max-w-screen-xl px-4 py-8 mx-auto space-y-12 lg:space-y-20 lg:py-24 lg:px-6">        
+        <div class="max-w-screen-xl px-4 py-8 mx-auto space-y-12 lg:space-y-20 lg:py-24 lg:px-6">
             <!-- Row -->
             <div class="items-center gap-8 lg:grid lg:grid-cols-2 xl:gap-16">
                 <div class="text-gray-500 sm:text-lg dark:text-gray-400">
@@ -224,131 +431,326 @@
                     <ul role="list" class="pt-8 space-y-5 border-t border-gray-200 my-7 dark:border-gray-700">
                         <li class="flex space-x-3">
                             <!-- Icon -->
-                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-white">无需下载，直接在线浏览。</span>
+                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span
+                                class="text-base font-medium leading-tight text-gray-900 dark:text-white">无需下载，直接在线浏览。</span>
                         </li>
                         <li class="flex space-x-3">
                             <!-- Icon -->
-                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-white">支持多轮 Prompt。</span>
+                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-white">支持多轮
+                                Prompt。</span>
                         </li>
                         <li class="flex space-x-3">
                             <!-- Icon -->
-                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-white">支持 KimiPlus。</span>
+                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span
+                                class="text-base font-medium leading-tight text-gray-900 dark:text-white">支持实时会话，多轮会话。</span>
                         </li>
                         <li class="flex space-x-3">
                             <!-- Icon -->
-                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-white">可跳转 Kimi 继续访问 PDF 文档。</span>
+                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span
+                                class="text-base font-medium leading-tight text-gray-900 dark:text-white">支持搜索，相关内容及时搜索呈现。</span>
                         </li>
                         <li class="flex space-x-3">
                             <!-- Icon -->
-                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-white">支持 Arc 浏览器。</span>
+                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-white">可跳转 Kimi
+                                继续访问 PDF 文档。</span>
+                        </li>
+                        <li class="flex space-x-3">
+                            <!-- Icon -->
+                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-white">支持 Arc
+                                浏览器。</span>
                         </li>
                     </ul>
                     <p class="mb-8 font-light lg:text-xl">无需下载和上传PDF，可在浏览器中直接使用，方便快捷。</p>
                 </div>
-                <img class="w-full mb-4 rounded-lg lg:mb-0 lg:flex" src="./images/note-feature-4.png" alt="dashboard feature image">
+                <img class="w-full mb-4 rounded-lg lg:mb-0 lg:flex" src="./images/note-feature-4.png"
+                    alt="dashboard feature image">
             </div>
         </div>
-      </section>
-      <section class="bg-gray-50 dark:bg-gray-800">
-        <div class="max-w-screen-xl px-4 py-8 mx-auto space-y-12 lg:space-y-20 lg:py-24 lg:px-6">        
+    </section>
+    <section class="bg-white dark:bg-gray-900">
+        <div class="max-w-screen-xl px-4 py-8 mx-auto space-y-12 lg:space-y-20 lg:py-24 lg:px-6">
+            <!-- Row -->
+            <div class="items-center gap-8 lg:grid lg:grid-cols-2 xl:gap-16">
+                <img class="w-full mb-4 rounded-lg lg:mb-0 lg:flex" src="./images/note-feature-5.png"
+                    alt="feature image 2">
+                <div class="text-gray-500 sm:text-lg dark:text-gray-400">
+                    <h2 class="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">会话聊天、即时搜索</h2>
+                    <p class="mb-8 font-light lg:text-xl">可在当前浏览页面中通过会话和Kimi多次互动，即时搜索相关内容，提升效率。</p>
+                    <!-- List -->
+                    <ul role="list" class="pt-8 space-y-5 border-t border-gray-200 my-7 dark:border-gray-700">
+                        <li class="flex space-x-3">
+                            <!-- Icon -->
+                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span
+                                class="text-base font-medium leading-tight text-gray-900 dark:text-white">基于网页、PDF的内容进行会话交互。</span>
+                        </li>
+                        <li class="flex space-x-3">
+                            <!-- Icon -->
+                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span
+                                class="text-base font-medium leading-tight text-gray-900 dark:text-white">无需跳转，方便快捷。</span>
+                        </li>
+                        <li class="flex space-x-3">
+                            <!-- Icon -->
+                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span
+                                class="text-base font-medium leading-tight text-gray-900 dark:text-white">自动推荐5个可能的问题。</span>
+                        </li>
+                        <li class="flex space-x-3">
+                            <!-- Icon -->
+                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-white">根据输入的提示词自动匹配搜索。</span>
+                        </li>
+                        <li class="flex space-x-3">
+                            <!-- Icon -->
+                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span
+                                class="text-base font-medium leading-tight text-gray-900 dark:text-white">搜索的结果中包含来源链接。</span>
+                        </li>
+                        <li class="flex space-x-3">
+                            <!-- Icon -->
+                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-white">支持 Arc、Edge、Chrome 浏览器。</span>
+                        </li>
+                    </ul>
+                    <p class="font-light lg:text-xl">Kimi 会话交互功能，让用户在浏览网页、PDF时，通过与机器人进行会话交互，提升效率。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="bg-gray-50 dark:bg-gray-800">
+        <div class="max-w-screen-xl px-4 py-8 mx-auto space-y-12 lg:space-y-20 lg:py-24 lg:px-6">
             <!-- Row -->
             <div class="items-center gap-8 lg:grid lg:grid-cols-2 xl:gap-16">
                 <div class="text-gray-500 sm:text-lg dark:text-gray-400">
-                    <h2 class="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">Kimi 会话保留，KimiPlus 支持</h2>
+                    <h2 class="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">Kimi
+                        会话保留，KimiPlus 支持</h2>
                     <p class="mb-8 font-light lg:text-xl">使用 Kimi 时，所有会话都将自动保存至Kimi AI平台，用户可以随时回顾和继续之前的对话。</p>
                     <!-- List -->
                     <ul role="list" class="pt-8 space-y-5 border-t border-gray-200 my-7 dark:border-gray-700">
                         <li class="flex space-x-3">
                             <!-- Icon -->
-                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-white">自动保存会话内容。</span>
+                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span
+                                class="text-base font-medium leading-tight text-gray-900 dark:text-white">自动保存会话内容。</span>
                         </li>
                         <li class="flex space-x-3">
                             <!-- Icon -->
-                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-white">可直接使用 KimiPlus。</span>
+                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-white">可直接使用
+                                KimiPlus。</span>
                         </li>
                         <li class="flex space-x-3">
                             <!-- Icon -->
-                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-white">直接跳转，方便快捷；KimiPlus 也可跳转访问。</span>
+                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span
+                                class="text-base font-medium leading-tight text-gray-900 dark:text-white">直接跳转，方便快捷；KimiPlus
+                                也可跳转访问。</span>
                         </li>
                         <li class="flex space-x-3">
                             <!-- Icon -->
-                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-white">单个网页在同一个会话中（KimiPlus 为单独会话）。</span>
+                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span
+                                class="text-base font-medium leading-tight text-gray-900 dark:text-white">单个网页在同一个会话中（KimiPlus
+                                为单独会话）。</span>
                         </li>
                         <li class="flex space-x-3">
                             <!-- Icon -->
-                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-white">支持 Arc 浏览器。</span>
+                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-white">支持 Arc
+                                浏览器。</span>
                         </li>
                         <li class="flex space-x-3">
                             <!-- Icon -->
-                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
-                            <span class="text-base font-medium leading-tight text-gray-900 dark:text-white">所有功能无需特别配置，登录 Kimi 即可。</span>
+                            <svg class="flex-shrink-0 w-5 h-5 text-purple-500 dark:text-purple-400" fill="currentColor"
+                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                            <span
+                                class="text-base font-medium leading-tight text-gray-900 dark:text-white">所有功能无需特别配置，登录
+                                Kimi 即可。</span>
                         </li>
                     </ul>
                     <p class="mb-8 font-light lg:text-xl">会话可长期保持，自动更新，不掉线。</p>
                 </div>
-                <img class="w-full mb-4 rounded-lg lg:mb-0 lg:flex" src="./images/note-feature-3.png" alt="dashboard feature image">
+                <img class="w-full mb-4 rounded-lg lg:mb-0 lg:flex" src="./images/note-feature-3.png"
+                    alt="dashboard feature image">
             </div>
         </div>
-      </section>
+    </section>
     <!-- End block -->
     <!-- Start block -->
     <section class="bg-white dark:bg-gray-900">
-        <div class="items-center max-w-screen-xl px-4 py-8 mx-auto lg:grid lg:grid-cols-4 lg:gap-16 xl:gap-24 lg:py-24 lg:px-6">
+        <div
+            class="items-center max-w-screen-xl px-4 py-8 mx-auto lg:grid lg:grid-cols-4 lg:gap-16 xl:gap-24 lg:py-24 lg:px-6">
             <div class="col-span-2 mb-8">
                 <p class="text-lg font-medium text-purple-600 dark:text-purple-500">Note by Kimi</p>
-                <h2 class="mt-3 mb-4 text-3xl font-extrabold tracking-tight text-gray-900 md:text-3xl dark:text-white">欢迎使用</h2>
+                <h2 class="mt-3 mb-4 text-3xl font-extrabold tracking-tight text-gray-900 md:text-3xl dark:text-white">
+                    欢迎使用</h2>
                 <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">功能持续完善中，请多提意见和建议。</p>
                 <div class="pt-6 mt-6 space-y-4 border-t border-gray-200 dark:border-gray-700">
                     <div>
-                      <a href="https://chromewebstore.google.com/detail/%E6%8F%90%E5%8F%96%E5%86%85%E5%AE%B9%E6%95%B0%E6%8D%AE-by-kimi/khfagpkengoghobnakblddbmdhjkolkb?hl=zh-CN&utm_source=ext_sidebar" class="inline-flex items-center text-base font-medium text-purple-600 hover:text-purple-800 dark:text-purple-500 dark:hover:text-purple-700">
-                        Go To Chrome Web Store
-                        <svg class="w-5 h-5 ml-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                      </a>
+                        <a href="https://chromewebstore.google.com/detail/%E6%8F%90%E5%8F%96%E5%86%85%E5%AE%B9%E6%95%B0%E6%8D%AE-by-kimi/khfagpkengoghobnakblddbmdhjkolkb?hl=zh-CN&utm_source=ext_sidebar"
+                            class="inline-flex items-center text-base font-medium text-purple-600 hover:text-purple-800 dark:text-purple-500 dark:hover:text-purple-700">
+                            Go To Chrome Web Store
+                            <svg class="w-5 h-5 ml-1" fill="currentColor" viewBox="0 0 20 20"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </a>
                     </div>
                 </div>
             </div>
             <div class="col-span-2 space-y-8 md:grid md:grid-cols-2 md:gap-12 md:space-y-0">
                 <div>
-                    <svg class="w-10 h-10 mb-2 text-purple-600 md:w-12 md:h-12 dark:text-purple-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M2 5a2 2 0 012-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2V5zm14 1a1 1 0 11-2 0 1 1 0 012 0zM2 13a2 2 0 012-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zm14 1a1 1 0 11-2 0 1 1 0 012 0z" clip-rule="evenodd"></path></svg>
+                    <svg class="w-10 h-10 mb-2 text-purple-600 md:w-12 md:h-12 dark:text-purple-500" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M2 5a2 2 0 012-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2V5zm14 1a1 1 0 11-2 0 1 1 0 012 0zM2 13a2 2 0 012-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zm14 1a1 1 0 11-2 0 1 1 0 012 0z"
+                            clip-rule="evenodd"></path>
+                    </svg>
                     <h3 class="mb-2 text-2xl font-bold dark:text-white">100% 在线</h3>
-                    <p class="font-light text-gray-500 dark:text-gray-400">插件7X24小时在线。</p></p>
+                    <p class="font-light text-gray-500 dark:text-gray-400">插件7X24小时在线。</p>
+                    </p>
                 </div>
                 <div>
-                    <svg class="w-10 h-10 mb-2 text-purple-600 md:w-12 md:h-12 dark:text-purple-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"></path></svg>
+                    <svg class="w-10 h-10 mb-2 text-purple-600 md:w-12 md:h-12 dark:text-purple-500" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z">
+                        </path>
+                    </svg>
                     <h3 class="mb-2 text-2xl font-bold dark:text-white">提升中</h3>
                     <p class="font-light text-gray-500 dark:text-gray-400">欢迎使用。</p>
                 </div>
                 <div>
-                    <svg class="w-10 h-10 mb-2 text-purple-600 md:w-12 md:h-12 dark:text-purple-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM4.332 8.027a6.012 6.012 0 011.912-2.706C6.512 5.73 6.974 6 7.5 6A1.5 1.5 0 019 7.5V8a2 2 0 004 0 2 2 0 011.523-1.943A5.977 5.977 0 0116 10c0 .34-.028.675-.083 1H15a2 2 0 00-2 2v2.197A5.973 5.973 0 0110 16v-2a2 2 0 00-2-2 2 2 0 01-2-2 2 2 0 00-1.668-1.973z" clip-rule="evenodd"></path></svg>
+                    <svg class="w-10 h-10 mb-2 text-purple-600 md:w-12 md:h-12 dark:text-purple-500" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zM4.332 8.027a6.012 6.012 0 011.912-2.706C6.512 5.73 6.974 6 7.5 6A1.5 1.5 0 019 7.5V8a2 2 0 004 0 2 2 0 011.523-1.943A5.977 5.977 0 0116 10c0 .34-.028.675-.083 1H15a2 2 0 00-2 2v2.197A5.973 5.973 0 0110 16v-2a2 2 0 00-2-2 2 2 0 01-2-2 2 2 0 00-1.668-1.973z"
+                            clip-rule="evenodd"></path>
+                    </svg>
                     <h3 class="mb-2 text-2xl font-bold dark:text-white">不限区域</h3>
                     <p class="font-light text-gray-500 dark:text-gray-400">在哪里都能用。</p>
                 </div>
                 <div>
-                    <svg class="w-10 h-10 mb-2 text-purple-600 md:w-12 md:h-12 dark:text-purple-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path></svg>
+                    <svg class="w-10 h-10 mb-2 text-purple-600 md:w-12 md:h-12 dark:text-purple-500" fill="currentColor"
+                        viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z">
+                        </path>
+                    </svg>
                     <h3 class="mb-2 text-2xl font-bold dark:text-white">免费</h3>
                     <p class="font-light text-gray-500 dark:text-gray-400">完全免费，欢迎使用。</p>
                 </div>
             </div>
         </div>
-      </section>
-    <!-- End block -->    
+    </section>
+    <!-- End block -->
     <!-- Start block -->
     <section class="bg-gray-50 dark:bg-gray-800">
         <div class="max-w-screen-xl px-4 py-8 mx-auto lg:py-16 lg:px-6">
             <div class="max-w-screen-sm mx-auto text-center">
-                <h2 class="mb-4 text-3xl font-extrabold leading-tight tracking-tight text-gray-900 dark:text-white">现在就开始使用吧！</h2>
+                <h2 class="mb-4 text-3xl font-extrabold leading-tight tracking-tight text-gray-900 dark:text-white">
+                    现在就开始使用吧！</h2>
                 <p class="mb-6 font-light text-gray-500 dark:text-gray-400 md:text-lg">在 Chrome、Arc、Edge 浏览器中打开均可使用。</p>
-                <a href="https://chromewebstore.google.com/detail/%E6%8F%90%E5%8F%96%E5%86%85%E5%AE%B9%E6%95%B0%E6%8D%AE-by-kimi/khfagpkengoghobnakblddbmdhjkolkb?hl=zh-CN&utm_source=ext_sidebar" class="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800">前往安装</a>
+                <a href="https://chromewebstore.google.com/detail/%E6%8F%90%E5%8F%96%E5%86%85%E5%AE%B9%E6%95%B0%E6%8D%AE-by-kimi/khfagpkengoghobnakblddbmdhjkolkb?hl=zh-CN&utm_source=ext_sidebar"
+                    class="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800">前往安装</a>
             </div>
         </div>
     </section>
@@ -357,36 +759,57 @@
         <div class="max-w-screen-xl p-4 py-6 mx-auto lg:py-16 md:p-8 lg:p-10">
             <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8">
             <div class="text-center">
-                <a href="#" class="flex items-center justify-center mb-5 text-2xl font-semibold text-gray-900 dark:text-white">
+                <a href="#"
+                    class="flex items-center justify-center mb-5 text-2xl font-semibold text-gray-900 dark:text-white">
                     <img src="./images/icon-128.png" class="h-6 mr-3 sm:h-9" alt="Landwind Logo" />
-                    提取内容数据 by Kimi    
+                    提取内容数据 by Kimi
                 </a>
-                <span class="block text-sm text-center text-gray-500 dark:text-gray-400">© 2024 Note by Kimi. All Rights Reserved.
+                <span class="block text-sm text-center text-gray-500 dark:text-gray-400">© 2024 Note by Kimi. All Rights
+                    Reserved.
                 </span>
                 <ul class="flex justify-center mt-5 space-x-5">
                     <li>
                         <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd"
+                                    d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                                    clip-rule="evenodd" />
+                            </svg>
                         </a>
                     </li>
                     <li>
                         <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" /></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd"
+                                    d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                                    clip-rule="evenodd" />
+                            </svg>
                         </a>
                     </li>
                     <li>
                         <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" /></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path
+                                    d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                            </svg>
                         </a>
                     </li>
                     <li>
                         <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" /></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd"
+                                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                                    clip-rule="evenodd" />
+                            </svg>
                         </a>
                     </li>
                     <li>
                         <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z" clip-rule="evenodd" /></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd"
+                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z"
+                                    clip-rule="evenodd" />
+                            </svg>
                         </a>
                     </li>
                 </ul>
@@ -394,15 +817,16 @@
         </div>
     </footer>
     <!-- <script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script> -->
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-100820-3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-100820-3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-  gtag('config', 'UA-100820-3');
-</script>
+        gtag('config', 'UA-100820-3');
+    </script>
 
 </body>
+
 </html>
